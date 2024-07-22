@@ -91,4 +91,6 @@ precmd() {
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+export EDITOR=nvim
+#eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"

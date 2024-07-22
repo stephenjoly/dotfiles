@@ -1,9 +1,11 @@
 # Aliases
-alias ls='ls --color'
+alias ls='exa'
+alias ll='exa -alh'
+alias tree='exa --tree'
+alias cat='bat'
+
 alias vim='nvim'
 alias c='clear'
 alias karen='ssh -p 33 karen@10.87.111.34'
 alias proxbox='ssh -p 33 stephen@10.87.111.166'
-alias lal='ls --color -alX'
-alias tree-al='tree -a -L'
 alias .aliases='cat .aliases'
