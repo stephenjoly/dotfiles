@@ -23,3 +23,12 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 yay -S --noconfirm pika-backup extension-manager visual-studio-code-bin nordvpn-bin \
   whatsapp-for-linux trayscale messenger-nativefier betterbird-bin brave-bin
 
+# Navigate to the dotfiles directory
+cd ~/dotfiles
+
+# Run stow for each specified folder
+stow kitty
+stow nvim
+stow pika
+stow tmux
+stow zsh
