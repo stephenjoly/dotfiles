@@ -4,13 +4,14 @@
 sudo pacman -Suy --noconfirm
 
 # Install essential packages
-sudo pacman -S --needed --noconfirm git neovim fastfetch zsh firefox obsidian timeshift tailscale \
-  cups hplip system-config-printer sshfs bluez bluez-utils btusb syncthing chromium \
-  libreoffice-fresh vlc stow remmina ripgrep bat zoxide wl-clipboard nfs-utils tree \
-  nerd-fonts-complete tmux exfatprogs net-tools libheif eza resolvconf kitty lsusb \
-  usbutils kiwix-desktop openvpn networkmanager-openvpn nvm python-ipykernel python-pandas \
-  python-pip python-chardet python-openpyxl python-matplotlib python-xlsxwriter python-openai \
-  python-nltk
+sudo pacman -S --needed --noconfirm base-devel cups hplip system-config-printer sshfs bluez bluez-utils libreoffice-fresh ripgrep bat zoxide wl-clipboard nfs-utils tree exfatprogs net-tools libheif eza usbutils openvpn networkmanager-openvpn systemd-resolved
+
+sudo pacman -S --needed --noconfirm neovim fastfetch zsh firefox obsidian timeshift tailscale syncthing chromium vlc stow remmina tmux kittykiwix-desktop lazygit
+
+sudo pacman -S --needed --noconfirm python-ipykernel python-pandas python-pip python-chardet python-openpyxl python-matplotlib python-xlsxwriter python-openai fzf
+
+sudo systemctl enable syncthing.service --user
+sudo systemctl start syncthing.service --user
 
 # Change default shell to zsh without prompting
 sudo chsh -s /usr/bin/zsh $USER
@@ -20,8 +21,7 @@ sudo pacman -S --needed --noconfirm git base-devel
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 # Install AUR packages non-interactively
-yay -S --noconfirm pika-backup extension-manager visual-studio-code-bin nordvpn-bin \
-  whatsapp-for-linux trayscale messenger-nativefier betterbird-bin brave-bin
+yay -S --noconfirm pika-backup visual-studio-code-bin nordvpn-bin whatsapp-for-linux betterbird-bin
 
 # Navigate to the dotfiles directory
 cd ~/dotfiles
@@ -29,6 +29,8 @@ cd ~/dotfiles
 # Run stow for each specified folder
 stow kitty
 stow nvim
-stow pika
 stow tmux
 stow zsh
+
+# Generate SSH key
+ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
