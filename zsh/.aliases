@@ -7,6 +7,6 @@ alias cd='z'
 
 alias vim='nvim'
 alias c='clear'
-alias karen='ssh -p 33 karen@10.87.111.34'
-alias proxbox='ssh -p 33 stephen@10.87.111.166'
+alias karen='kitten ssh -p 33 karen@10.87.111.34'
+alias proxbox='kitten ssh -p 33 stephen@10.87.111.166'
 alias .aliases='cat .aliases'
