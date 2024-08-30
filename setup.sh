@@ -32,5 +32,12 @@ stow nvim
 stow tmux
 stow zsh
 
+# Setup the git stuff for the dotfiles folder
+git config --global user.email "stephen.a.joly@gmail.com"
+git config --global user.name "Stephen"
+git branch -m main
+git remote set-url origin git@github.com:stephenjoly/dotfiltes.git 
+
+
 # Generate SSH key
 ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
