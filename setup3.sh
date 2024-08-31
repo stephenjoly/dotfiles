@@ -39,7 +39,7 @@ notify_completion "Stage 1"
 # Stage 2: Install essential packages
 flashy_notify "Stage 2: Installing essential packages"
 wait_for_user
-sudo pacman -S --needed --noconfirm cups hplip system-config-printer sshfs bluez bluez-utils libreoffice-fresh ripgrep bat zoxide wl-clipboard nfs-utils tree exfatprogs net-tools libheif eza usbutils openvpn networkmanager-openvpn
+sudo pacman -S --needed --noconfirm cups hplip system-config-printer sshfs bluez bluez-utils libreoffice-fresh ripgrep bat zoxide wl-clipboard nfs-utils tree exfatprogs net-tools libheif eza usbutils openvpn networkmanager-openvpn freerdp fzf
 notify_completion "Stage 2"
 
 # Stage 3: Install my applications
@@ -51,7 +51,8 @@ notify_completion "Stage 3"
 # Stage 4: Install python packages
 flashy_notify "Stage 4: Installing Python packages"
 wait_for_user
-sudo pacman -S --needed --noconfirm python-ipykernel python-pandas python-pip python-chardet python-openpyxl python-matplotlib python-xlsxwriter python-openai fzf
+sudo pacman -S --needed --noconfirm python-ipykernel python-pandas python-pip python-chardet python-openpyxl python-matplotlib python-xlsxwriter python-openai
+
 notify_completion "Stage 4"
 
 # Stage 5: Enable key services
